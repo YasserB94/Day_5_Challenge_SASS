@@ -16,7 +16,7 @@
 - [SASS 20' Explanatory video](https://www.youtube.com/watch?v=Zz6eOVaaelI)
 - [W3Schools - SASS](https://www.w3schools.com/sass/)
 ## Exercise ##
-- [ ]Rewrite the example css into a SCSS file
+- [ ] Rewrite the example css into a SCSS file
   - Make one mixin for the 3 lines of the box-shadow styling.
   - Make the general padding the same everywhere with one variable.
     - Red = 16px
@@ -38,6 +38,6 @@
 
 
 #### Exercise Tools ####
-[SASS installation](https://sass-lang.com/install)
-[Live SASS Compiler VScode](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)]
-[CSS-Minify Command Line Tool](https://10minute.tech/minify-css-and-js-files-from-the-terminal/)
+- [SASS installation](https://sass-lang.com/install)
+- [Live SASS Compiler VScode](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)
+- [CSS-Minify Command Line Tool](https://10minute.tech/minify-css-and-js-files-from-the-terminal/)
