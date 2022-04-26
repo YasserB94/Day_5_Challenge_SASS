@@ -1,4 +1,101 @@
-body{
-    background-color: black;
- text-decoration: none;
+/*---IMPORTS---*/
+@import url(./Sassy_Sheets/_variables.scss);
+@import url(./Sassy_Sheets/_mixins.scss);
+/*--VARIABLES--*/
+/*--Paddings--*/
+$padding-base:0px;
+$padding-blue:8px;
+$padding-red:16px;
+/*--Colors--*/
+/*--Base colors will have a weight of 500,
+0 will be lightest
+900 darkest--*/
+$clr-default:black;
+$clr-black-500:black;
+$clr-red-500:red;
+$clr-green-500:green;
+$clr-orange-500:orange;
+$clr-blue-250:#6B8EFF;
+$clr-blue-500:#2748B3;
+/*--MIXINS--*/
+/*--mixin to automate padding based on set background color--*/
+@mixin bgColorAutomatePadding($bgColor:$clr-default) {
+    /*--Set background color to specified color--*/
+    background-color: $bgColor;
+
+    /*--If the color was set to blue we will increase the padding--*/
+    @if $bgColor==$clr-blue-500 {
+        padding: $padding-blue;
+    }
+
+    @else if $bgColor=="blue" {
+        padding: $padding-blue;
+    }
+
+    @else if $bgColor=="Blue" {
+        padding: $padding-blue;
+    }
+
+    /*--If the background color was set to red we will increase the padding--*/
+    @else if $bgColor==$clr-red-500 {
+        padding: $padding-red;
+    }
+
+    @else if $bgColor=="red" {
+        padding: $padding-red;
+    }
+
+    @else if $bgColor=="Red" {
+        padding: $padding-red;
+    }
+
+    /*--If another color was set we will use the base padding--*/
+    @else {
+        padding: $padding-base;
+    }
+}
+/*--Body Styling--*/
+body {
+    @include bgColorAutomatePadding($clr-black-500);
+}
+
+/*--Article Styling--*/
+article {
+
+    /*--Sections in article--*/
+    section {
+
+        /*--sections in article with Selling-points ID--*/
+        #selling-points {}
+    }
+
+    /*-- Code within article--*/
+    code {
+
+
+
+        /*--code Before CLASS--*/
+        .before {}
+
+        /*--Code after CLASS --*/
+        .after {}
+    }
+}
+
+/*---HeadingStyling---*/
+h1,
+h2,
+h6 {
+    color: #6B8EFF;
+}
+
+h1 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+    font-size: 2em;
+    padding: 32px;
+    margin-bottom: 0px;
 }
