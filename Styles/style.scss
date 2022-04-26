@@ -1,25 +1,30 @@
 /*---IMPORTS---*/
-@import url(./Sassy_Sheets/_variables.scss);
-@import url(./Sassy_Sheets/_mixins.scss);
+// @import url(./Sassy_Sheets/_variables.scss);BROKEN
+// @import url(./Sassy_Sheets/_mixins.scss);BROKEN
 /*--VARIABLES--*/
 /*--Paddings--*/
 $padding-base:0px;
 $padding-blue:8px;
 $padding-red:16px;
+$padding-increment:8px;
+$padding-boxes:10px;
 /*--Colors--*/
 /*--Base colors will have a weight of 500,
 0 will be lightest
 900 darkest--*/
 $clr-default:black;
+$clr-grey-250:rgba(255, 255, 255, 0.75);
+$clr-grey-500:#666;
 $clr-black-500:black;
 $clr-red-500:red;
 $clr-green-500:green;
 $clr-orange-500:orange;
 $clr-blue-250:#6B8EFF;
 $clr-blue-500:#2748B3;
+
 /*--MIXINS--*/
 /*--mixin to automate padding based on set background color--*/
-@mixin bgColorAutomatePadding($bgColor:$clr-default) {
+@mixin mBgColorAutomatePadding($bgColor:$clr-default) {
     /*--Set background color to specified color--*/
     background-color: $bgColor;
 
@@ -54,31 +59,96 @@ $clr-blue-500:#2748B3;
         padding: $padding-base;
     }
 }
+
+/*--Set padding, if no custom padding is specified padding will be base, Padding will go up number specified*Padding increment--*/
+@mixin mPaddingAutomate($increment:0) {
+    /*--Padding = Base padding + Increment*PAdding-Increment--*/
+    padding: calc($padding-base+($increment*$padding-increment))
+}
+
+@mixin mBoxShadow {
+    -webkit-box-shadow: 10px 10px 19px -4px $clr-grey-250;
+    -moz-box-shadow: 10px 10px 19px -4px $clr-grey-250;
+    box-shadow: 10px 10px 19px -4px $clr-grey-250;
+}
+
 /*--Body Styling--*/
 body {
-    @include bgColorAutomatePadding($clr-black-500);
+    /*--Changed--*/
+    @include mBgColorAutomatePadding($clr-black-500);
+    @include mPaddingAutomate();
+    color: $clr-blue-500;
+    /*--Original--*/
+    margin: 0px;
+    font: 100% "Space Mono", monospace;
+    margin: 0px;
+    background-image: radial-gradient(#fff, rgba(255, 255, 255, 0.2) 2px, transparent 40px), radial-gradient(#fff, rgba(255, 255, 255, 0.15) 1px, transparent 30px), radial-gradient(#fff, rgba(255, 255, 255, 0.1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    background-attachment: fixed
 }
 
 /*--Article Styling--*/
 article {
+    /*--Original--*/
+    display: flex;
+    flex-wrap: wrap;
 
     /*--Sections in article--*/
     section {
+        /*--Changed--*/
+        @include mPaddingAutomate(2);
+        @include mBoxShadow();
+        /*--Original--*/
+        flex-grow: 1;
+        flex-basis: 45%;
+        border: 1px silver solid;
+
+        margin: 16px;
+        clear: both;
+        overflow: auto;
+        box-sizing: border-box;
 
         /*--sections in article with Selling-points ID--*/
-        #selling-points {}
+        #selling-points {
+            /*--Original--*/
+            flex-grow: 2;
+            flex-basis: 100%;
+        }
     }
 
     /*-- Code within article--*/
     code {
-
+        /*--Changed--*/
+        background: $clr-black-500;
+        color: $clr-grey-500;
+        /*--Original--*/
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
 
 
         /*--code Before CLASS--*/
-        .before {}
+        .before {
+            /*--Original--*/
+            float: left;
+            width: 40%
+        }
 
         /*--Code after CLASS --*/
-        .after {}
+        .after {
+            /*--Original--*/
+            float: right;
+            width: 40%
+        }
     }
 }
 
@@ -86,16 +156,51 @@ article {
 h1,
 h2,
 h6 {
-    color: #6B8EFF;
+    /*--Changed--*/
+    color: $clr-blue-250;
 }
 
 h1 {
+    /*--Original--*/
     text-align: center;
 }
 
 h6 {
+    /*--Changed--*/
+    @include mPaddingAutomate(4);
+    /*--Original--*/
     text-align: center;
     font-size: 2em;
-    padding: 32px;
     margin-bottom: 0px;
+}
+.message{
+    /*--Changed--*/
+    color: $clr-blue-500;
+    @include mBgColorAutomatePadding($clr-black-500);
+    padding: $padding-boxes;
+    /*--Original--*/
+    border: 1px solid #ccc;
+    width: 100%
+}
+
+.success {
+    /*--Changes--*/
+    @extend .message;
+        /*--Original--*/
+
+    background-color: green
+}
+.error {
+
+        /*--Changes--*/
+    @extend .message;
+    /*--Original--*/
+    background-color: red
+}
+.warning {
+        /*--Changes--*/
+    @extend .message;
+        /*--Original--*/
+
+    background-color: orange
 }
