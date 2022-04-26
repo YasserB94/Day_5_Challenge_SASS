@@ -60,11 +60,12 @@ $clr-blue-500:#2748B3;
     }
 }
 
-/*--Set padding, if no custom padding is specified padding will be base, Padding will go up number specified*Padding increment--*/
-@mixin mPaddingAutomate($increment:0) {
-    /*--Padding = Base padding + Increment*PAdding-Increment--*/
-    padding: calc($padding-base+($increment*$padding-increment))
-}
+// /*--Set padding, if no custom padding is specified padding will be base, Padding will go up number specified*Padding increment--*/
+// @mixin mPaddingAutomate($increment:0) {
+    //COMPILER DOES NOT LIKE THIS
+//     /*--Padding = Base padding + Increment*PAdding-Increment--*/
+//     padding: calc($padding-base + calc($increment * $padding-increment))
+// }
 
 @mixin mBoxShadow {
     -webkit-box-shadow: 10px 10px 19px -4px $clr-grey-250;
@@ -76,7 +77,8 @@ $clr-blue-500:#2748B3;
 body {
     /*--Changed--*/
     @include mBgColorAutomatePadding($clr-black-500);
-    @include mPaddingAutomate();
+    // @include mPaddingAutomate();
+    padding: $padding-base;
     color: $clr-blue-500;
     /*--Original--*/
     margin: 0px;
@@ -97,7 +99,7 @@ article {
     /*--Sections in article--*/
     section {
         /*--Changed--*/
-        @include mPaddingAutomate(2);
+        // @include mPaddingAutomate(2);
         @include mBoxShadow();
         /*--Original--*/
         flex-grow: 1;
@@ -167,7 +169,9 @@ h1 {
 
 h6 {
     /*--Changed--*/
-    @include mPaddingAutomate(4);
+    // @include mPaddingAutomate(4);
+    $tempvar:$padding-base*4;
+    padding: $tempvar;
     /*--Original--*/
     text-align: center;
     font-size: 2em;
