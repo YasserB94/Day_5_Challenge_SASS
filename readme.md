@@ -35,7 +35,21 @@
       - Only elements using the variable after the change will be affected by it
     - SASS variables are not included in the CSS output :D
   - Mixins (Functions) 
-    - 
+    - Work like functions
+    - Can hold multiple properties
+    - declared with @mixin
+    - Called with @include
+    - Can make use of custom parameters
+      - Can Add Default values in following syntax
+        - "@mixin example($var: default){property:$var}
+  - Extension
+    - @extend NAME
+    - Can inherit styles from other elements
+    - added properties will overwrite the extension for the current element
+  - Calculations
+    - Use Calc() to avoid compilation issues
+    - Can use following operators:
+      - '+' , '-' , '*' , '/'
 ## Exercise ##
 - [ ] Rewrite the example css into a SCSS file
   - [ ] Make one mixin for the 3 lines of the box-shadow styling.
