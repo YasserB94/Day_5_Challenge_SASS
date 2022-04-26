@@ -1,0 +1,28 @@
+@import url(./_variables.scss);
+
+/*---Stylesheet to hold Mixins---*/
+
+/*---Set the background color
+Automaticly increases padding based on the color--*/
+/*--USED VARIABLES IN CODEBLOCK
+
+$padding-base:0px;
+$padding-100:8px;
+$padding-200:16px;
+$clr-black-500:black;
+$clr-red-500:red;
+$clr-green-500:green;
+$clr-orange-500:orange;
+$clr-blue-250:#6B8EFF;
+$clr-blue:#2748B3;
+--*/
+@mixin bgColorAutomatePadding($bgColor:$clr-black-500) {
+    background-color: $bgColor;
+    @if $bgColor == $clr-black-500 {
+        padding: $padding-base;
+    }@else if $bgColor == $clr-blue-500{
+        padding: $padding-100;
+    }@else if$bgcolor == $clr-red-500{
+        padding: $padding-200;
+    }
+}
