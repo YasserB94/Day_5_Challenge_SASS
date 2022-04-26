@@ -4,7 +4,7 @@
 - [X] Being able to explain what a CSS-Preprocessor is
 - [X] Generate some CSS from your CSS preprocessor (SASS)
 - [X] Being able to minify your CSS output
-- [ ] Knowledge of the following SASS features:
+- [X] Knowledge of the following SASS features:
    - Variables
    - Mixins (Functions)
    - Nesting
@@ -15,13 +15,34 @@
 - [CSS Preprocessor explanatory article](https://www.template.net/tutorials/css-preprocessor/)
 - [SASS 20' Explanatory video](https://www.youtube.com/watch?v=Zz6eOVaaelI)
 - [W3Schools - SASS](https://www.w3schools.com/sass/)
+
+#### Objective Notes ####
+- CSS Preprocessor
+  - A language created to make CSS more powerfull with the option to compile into CSS so it's understandable for browsers
+- Generate CSS from a CSS preprocessor (SASS)
+  - Used Live SASS compiler in VS Code
+  - Can Also be done trough the SASS command line
+- Be able to minify your css output
+  - Using css-minify from the command line
+  - various websites will help here as well
+- Knowledge of following SASS features:
+  - Variables
+    - Begin with $
+    - Holds properties to reduce repetition
+    - Can only hold **one** value at a time!!!
+    - Can be declared anywhere 
+    - they are imperative
+      - Only elements using the variable after the change will be affected by it
+    - SASS variables are not included in the CSS output :D
+  - Mixins (Functions) 
+    - 
 ## Exercise ##
 - [ ] Rewrite the example css into a SCSS file
-  - Make one mixin for the 3 lines of the box-shadow styling.
-  - Make the general padding the same everywhere with one variable.
-    - Red = 16px
-    - Blue = 8px
-    - Footer H6 should have double the padding of the other elements
+  - [ ] Make one mixin for the 3 lines of the box-shadow styling.
+  - [ ] Make the general padding the same everywhere with one variable.
+    - [ ] Red = 16px
+    - [ ] Blue = 8px
+    - [ ] Footer H6 should have double the padding of the other elements
     - **NO HARDCODED PADDING**
   - [ ] Nest Styling Rules of grouped elements.
     - Like the sections in the article
