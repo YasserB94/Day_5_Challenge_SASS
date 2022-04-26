@@ -64,7 +64,7 @@
     - success
     - error
     - warning
-- [ ] Add an option to the compilation to minify the stylesheet
+- [X] Add an option to the compilation to minify the stylesheet
 ### Project Log ###
 1. Creation of basic file structure
         - Added Example HTML File to index.html
