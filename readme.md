@@ -51,16 +51,16 @@
     - Can use following operators:
       - '+' , '-' , '*' , '/'
 ## Exercise ##
-- [ ] Rewrite the example css into a SCSS file
-  - [ ] Make one mixin for the 3 lines of the box-shadow styling.
-  - [ ] Make the general padding the same everywhere with one variable.
-    - [ ] Red = 16px
-    - [ ] Blue = 8px
-    - [ ] Footer H6 should have double the padding of the other elements
+- [X] Rewrite the example css into a SCSS file
+  - [X] Make one mixin for the 3 lines of the box-shadow styling.
+  - [X] Make the general padding the same everywhere with one variable.
+    - [X] Red = 16px
+    - [X] Blue = 8px
+    - [X] Footer H6 should have double the padding of the other elements
     - **NO HARDCODED PADDING**
-  - [ ] Nest Styling Rules of grouped elements.
+  - [X] Nest Styling Rules of grouped elements.
     - Like the sections in the article
-- [ ] Make use of extend to re-use the same CSS for following messages:
+- [X] Make use of extend to re-use the same CSS for following messages:
     - success
     - error
     - warning
